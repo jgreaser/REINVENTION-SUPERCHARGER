@@ -1,0 +1,57 @@
+<ion-view title="Home" ng-controller="homeCtrl as homeCtrl">
+    <ion-content overflow-scroll="true" padding="true" style="background: url(img/YxZ7Yuh5TiaOS2rLOIE1_bg.png) no-repeat center;" class="has-header">
+        <h3>FLVS SUPERCHARGER</h3>
+        <form class="list">
+            <h4>What do you call this idea?</h4>
+            <label class="item item-input" name="title">
+                <input type="text" placeholder="" ng-model="homeCtrl.title">
+            </label>
+            <h4>What inspired this idea?</h4>
+            <label class="item item-input" name="inspiration"  >
+                <span class="input-label"></span><textarea placeholder="" ng-model="homeCtrl.inspiration"> </textarea>
+            </label>
+            <h4>Tell us about it.</h4>
+            <label class="item item-input" name="description"  >
+                <span class="input-label"></span><textarea placeholder="" ng-model="homeCtrl.description"> </textarea>
+            </label>
+            <h4>If you want to—Provide your name and contact information.</h4>
+            <label class="item item-input" name="contact"  >
+                <span class="input-label"></span><textarea placeholder="" ng-model="homeCtrl.contact"> </textarea>
+            </label>
+<div class="list">
+
+            <h4>What's this all about?</h4>
+<!-- 
+            <ion-radio ng-repeat="item in clientSideList"
+                   ng-value="item.value"
+                   ng-model="data.clientSide">
+                 {{ item.text }}
+            </ion-radio> -->
+
+            <ion-radio 
+                   ng-value="1"
+                   ng-model="homeCtrl.value">
+                 delivering content to students
+            </ion-radio>
+            <ion-radio 
+                   ng-value="2"
+                   ng-model="homeCtrl.value">
+                 improving curriculum process
+            </ion-radio>
+            <ion-radio 
+                   ng-value="3"
+                   ng-model="homeCtrl.value">
+                 improving FLVS processes
+            </ion-radio>
+            <ion-radio 
+                   ng-value="4"
+                   ng-model="homeCtrl.value">
+                this idea is too big to fit into one box
+            </ion-radio>
+
+
+</div>
+        </form>
+        <a ng-click="homeCtrl.logResponse()" ui-sref="thanks" class="button button-stable button-block ">Submit Idea</a>
+    </ion-content>
+</ion-view>
