@@ -1,136 +1,160 @@
-<ion-view title="Home" ng-controller="homeCtrl as homeCtrl">
-    <ion-content overflow-scroll="true" padding="true" style="background: url(img/YxZ7Yuh5TiaOS2rLOIE1_bg.png) no-repeat center;" class="has-header">
-        <img src="img/logo.png" class="headerImage" />
-
-        <div class="card rounder-point-topleft" ng-show="homeCtrl.startIsReady()">
-  <div class="item item-text-wrap ">
-        Do something.  
-        </div></div>
-        <div class="card rounder-point-topright">
-  <div class="item item-text-wrap">
+       
+<ion-view title="Home" ng-controller="homeCtrl as homeCtrl" class="container">
+    <ion-content overflow-scroll="true" padding="true" >
   
-        <a ng-show="homeCtrl.titleIsSet == false && homeCtrl.titleIsVisible == false" ng-click="homeCtrl.titleIsSet = false; homeCtrl.titleIsVisible = true"  class="button button-small button-energize"><i class="icon ion-ios-minus-outline"></i> Title </a>
-        <a ng-show="homeCtrl.titleIsSet == false && homeCtrl.titleIsVisible == true" ng-click="homeCtrl.titleIsSet = true; homeCtrl.titleIsVisible = true"  class="button button-small button-energized"><i class="icon ion-ios-minus-outline"></i> Title </a>
-        <a ng-show="homeCtrl.titleIsSet == true" ng-click="homeCtrl.titleIsSet = false"  class="button button-small button-royal"><i class="icon ion-ios-color-wand"></i> Title </a>
+      
+        <div ng-show="homeCtrl.isNotStarted() == false">
+            <h4 class="instructions" ng-show="homeCtrl.startIsReady() == true">
+               Pick an item below to get started. 
+            </h4>
+        <div class="card rounder-point-topright">
+            <div class="item item-text-wrap">
+
+                 <a ng-show="homeCtrl.contactIsSet == false && homeCtrl.contactIsVisible == false" ng-click="homeCtrl.contactIsSet = false; homeCtrl.contactIsVisible = true" class="button button-small button-light"><i class="icon ion-ios-minus-outline"></i>  Stay Involved?</a>
+                <a ng-show="homeCtrl.contactIsSet == false && homeCtrl.contactIsVisible == true" ng-click="homeCtrl.contactIsSet = true; homeCtrl.contactIsVisible = true" class="button button-small button-energized"><i class="icon ion-ios-minus-outline"></i>  Stay Involved?</a>
+                <a ng-show="homeCtrl.contactIsSet == true" ng-click="homeCtrl.contactIsSet = false" class="button button-small button-royal"><i class="icon ion-ios-color-wand"></i>  Stay Involved?</a>
+
+                <a ng-show="homeCtrl.titleIsSet == false && homeCtrl.titleIsVisible == false" ng-click="homeCtrl.titleIsSet = false; homeCtrl.titleIsVisible = true" class="button button-small button-light"><i class="icon ion-ios-minus-outline"></i> Title </a>
+                <a ng-show="homeCtrl.titleIsSet == false && homeCtrl.titleIsVisible == true" ng-click="homeCtrl.titleIsSet = true; homeCtrl.titleIsVisible = true" class="button button-small button-energized"><i class="icon ion-ios-minus-outline"></i> Title </a>
+                <a ng-show="homeCtrl.titleIsSet == true" ng-click="homeCtrl.titleIsSet = false" class="button button-small button-royal"><i class="icon ion-ios-color-wand"></i> Title </a>
 
 
-        <a ng-show="homeCtrl.categoryIsSet == false && homeCtrl.categoryIsVisible == false" ng-click="homeCtrl.categoryIsSet = false; homeCtrl.categoryIsVisible = true" class="button button-small button-light"><i class="icon ion-ios-minus-outline"></i> Category</a> 
-        <a ng-show="homeCtrl.categoryIsSet == false && homeCtrl.categoryIsVisible == true" ng-click="homeCtrl.categoryIsSet = true; homeCtrl.categoryIsVisible = true" class="button button-small button-energized"><i class="icon ion-ios-minus-outline"></i> Category</a> 
-        <a ng-show="homeCtrl.categoryIsSet == true" ng-click="homeCtrl.categoryIsSet = false" class="button button-small button-royal"><i class="icon ion-ios-color-wand"></i> Category</a> 
+                <a ng-show="homeCtrl.categoryIsSet == false && homeCtrl.categoryIsVisible == false" ng-click="homeCtrl.categoryIsSet = false; homeCtrl.categoryIsVisible = true" class="button button-small button-light"><i class="icon ion-ios-minus-outline"></i> Category</a>
+                <a ng-show="homeCtrl.categoryIsSet == false && homeCtrl.categoryIsVisible == true" ng-click="homeCtrl.categoryIsSet = true; homeCtrl.categoryIsVisible = true" class="button button-small button-energized"><i class="icon ion-ios-minus-outline"></i> Category</a>
+                <a ng-show="homeCtrl.categoryIsSet == true" ng-click="homeCtrl.categoryIsSet = false" class="button button-small button-royal"><i class="icon ion-ios-color-wand"></i> Category</a>
 
-        <a ng-show="homeCtrl.inspirationIsSet == false && homeCtrl.inspirationIsVisible == false" ng-click="homeCtrl.inspirationIsSet = false; homeCtrl.inspirationIsVisible = true" class="button button-small button-light"><i class="icon ion-ios-minus-outline"></i> Inspiration</a> 
-        <a ng-show="homeCtrl.inspirationIsSet == false && homeCtrl.inspirationIsVisible == true" ng-click="homeCtrl.inspirationIsSet = true; homeCtrl.inspirationIsVisible = true" class="button button-small button-energized"><i class="icon ion-ios-minus-outline"></i> Inspiration</a> 
-        <a ng-show="homeCtrl.inspirationIsSet == true" ng-click="homeCtrl.inspirationIsSet = false" class="button button-small button-royal"><i class="icon ion-ios-color-wand"></i> Inspiration</a> 
-        
-        <a ng-show="homeCtrl.problemIsSet == false && homeCtrl.problemIsVisible == false" ng-click="homeCtrl.problemIsSet = false; homeCtrl.problemIsVisible = true" class="button button-small button-light"><i class="icon ion-ios-minus-outline"></i> Problem</a> 
-        <a ng-show="homeCtrl.problemIsSet == false && homeCtrl.problemIsVisible == true" ng-click="homeCtrl.problemIsSet = true; homeCtrl.problemIsVisible = true" class="button button-small button-energized"><i class="icon ion-ios-minus-outline"></i> Problem</a> 
-        <a ng-show="homeCtrl.problemIsSet == true" ng-click="homeCtrl.problemIsSet = false" class="button button-small button-royal"><i class="icon ion-ios-color-wand"></i> Problem</a> 
-        <br />  <br />
-        
-        <a ng-show="homeCtrl.solutionIsSet == false && homeCtrl.solutionIsVisible == false" ng-click="homeCtrl.solutionIsSet = false; homeCtrl.solutionIsVisible = true" class="button button-small button-light"><i class="icon ion-ios-minus-outline"></i>  Solution</a> 
-        <a ng-show="homeCtrl.solutionIsSet == false && homeCtrl.solutionIsVisible == true" ng-click="homeCtrl.solutionIsSet = true; homeCtrl.solutionIsVisible = true" class="button button-small button-energized"><i class="icon ion-ios-minus-outline"></i>  Solution</a> 
-        <a ng-show="homeCtrl.solutionIsSet == true" ng-click="homeCtrl.solutionIsSet = false" class="button button-small button-royal"><i class="icon ion-ios-color-wand"></i>  Solution</a> 
-        
-        <a ng-show="homeCtrl.contactIsSet == false && homeCtrl.contactIsVisible == false" ng-click="homeCtrl.contactIsSet = false; homeCtrl.contactIsVisible = true" class="button button-small button-light"><i class="icon ion-ios-minus-outline"></i>  Contact</a> 
-        <a ng-show="homeCtrl.contactIsSet == false && homeCtrl.contactIsVisible == true" ng-click="homeCtrl.contactIsSet = true; homeCtrl.contactIsVisible = true" class="button button-small button-energized"><i class="icon ion-ios-minus-outline"></i>  Contact</a> 
-        <a ng-show="homeCtrl.contactIsSet == true" ng-click="homeCtrl.contactIsSet = false" class="button button-small button-royal"><i class="icon ion-ios-color-wand"></i>  Contact</a> 
-  </div>
-</div>
+                <a ng-show="homeCtrl.inspirationIsSet == false && homeCtrl.inspirationIsVisible == false" ng-click="homeCtrl.inspirationIsSet = false; homeCtrl.inspirationIsVisible = true" class="button button-small button-light"><i class="icon ion-ios-minus-outline"></i> Inspiration</a>
+                <a ng-show="homeCtrl.inspirationIsSet == false && homeCtrl.inspirationIsVisible == true" ng-click="homeCtrl.inspirationIsSet = true; homeCtrl.inspirationIsVisible = true" class="button button-small button-energized"><i class="icon ion-ios-minus-outline"></i> Inspiration</a>
+                <a ng-show="homeCtrl.inspirationIsSet == true" ng-click="homeCtrl.inspirationIsSet = false" class="button button-small button-royal"><i class="icon ion-ios-color-wand"></i> Inspiration</a>
+
+                <a ng-show="homeCtrl.problemIsSet == false && homeCtrl.problemIsVisible == false" ng-click="homeCtrl.problemIsSet = false; homeCtrl.problemIsVisible = true" class="button button-small button-light"><i class="icon ion-ios-minus-outline"></i> Problem</a>
+                <a ng-show="homeCtrl.problemIsSet == false && homeCtrl.problemIsVisible == true" ng-click="homeCtrl.problemIsSet = true; homeCtrl.problemIsVisible = true" class="button button-small button-energized"><i class="icon ion-ios-minus-outline"></i> Problem</a>
+                <a ng-show="homeCtrl.problemIsSet == true" ng-click="homeCtrl.problemIsSet = false" class="button button-small button-royal"><i class="icon ion-ios-color-wand"></i> Problem</a>
                 
 
-           <div ng-show="homeCtrl.titleIsSet == false && homeCtrl.titleIsVisible == true">
-              <h4>Give it a name.</h4>
-              <p><strong>Tip:</strong> Think about it for about...4 seconds. If it needs a great name, some writers will figure that out later.</p> 
-               <a ng-show="homeCtrl.title != ''" ng-click="homeCtrl.titleIsSet = true" class="button button-small button-royal">Add Idea Name</a><div ng-show="homeCtrl.titleIsSet == false">
-                  <label class="item item-input" name="title">
-                  <input type="text" placeholder="" ng-model="homeCtrl.title">
-              </label>
-                   
-              </div>
+                <a ng-show="homeCtrl.solutionIsSet == false && homeCtrl.solutionIsVisible == false" ng-click="homeCtrl.solutionIsSet = false; homeCtrl.solutionIsVisible = true" class="button button-small button-light"><i class="icon ion-ios-minus-outline"></i>  Solution</a>
+                <a ng-show="homeCtrl.solutionIsSet == false && homeCtrl.solutionIsVisible == true" ng-click="homeCtrl.solutionIsSet = true; homeCtrl.solutionIsVisible = true" class="button button-small button-energized"><i class="icon ion-ios-minus-outline"></i>  Solution</a>
+                <a ng-show="homeCtrl.solutionIsSet == true" ng-click="homeCtrl.solutionIsSet = false" class="button button-small button-royal"><i class="icon ion-ios-color-wand"></i>  Solution</a>
+
+               
+
             </div>
+        </div>
 
-            <div ng-show="homeCtrl.categoryIsSet == false && homeCtrl.categoryIsVisible == true" class="list">
+         <div ng-show="homeCtrl.contactIsSet == false && homeCtrl.contactIsVisible == true">
+            <h4>Do you want to stay involved?</h4>
+            <P>Give us your digits, email, etc. so we can get more information and talk about how we can work together on this.</P><p><strong>Want to remain anonymous?</strong> Good news, this thing submits all suggestions anonymously by default.</p>
+            <a ng-show="homeCtrl.contact != ''" ng-click="homeCtrl.contactIsSet = true" class="button button-small button-royal">Add Contact </a>
 
-                <h4>Does it fit in one of these categories?</h4>
-                  <a ng-show="homeCtrl.category != ''" ng-click="homeCtrl.categoryIsSet = true" class="button button-small button-royal">Add Category</a>
-                 <div ng-show="homeCtrl.categoryIsSet == false">
-                  <form  name="radioForm">
-                  <ion-radio value="content"ng-model="homeCtrl.category">
-                      delivering content to students
-                  </ion-radio>
-                  <ion-radio value="production-process" ng-model="homeCtrl.category">
-                      improving curriculum process
-                  </ion-radio>
-                  <ion-radio value="FLVS-process" ng-model="homeCtrl.category">
-                      improving FLVS processes
-                  </ion-radio>
-                  <ion-radio value="big-ideas" ng-model="homeCtrl.category">
-                      this idea is TOO BIG to fit into one box
-                  </ion-radio>
-                  <ion-radio value="nope" ng-model="homeCtrl.category">
-                      it doesn't really fit any of these
-                  </ion-radio>
-                </form>
-                
-                 </div>
-            </div>
+            <div ng-show="homeCtrl.contactIsSet == false">
 
-
-            <div ng-show="homeCtrl.inspirationIsSet == false && homeCtrl.inspirationIsVisible == true">
-              <h4>What inspired this idea?</h4>
-              <p>Were you frustrated? See something interesting on Twitter? Remember that great idea you had 17 years ago?</p>
-                <a ng-show="homeCtrl.inspiration != ''" ng-click="homeCtrl.inspirationIsSet = true" class="button button-small button-royal">Add Inspiration</a>
-              
-              <div ng-show="homeCtrl.inspirationIsSet == false">
-                <label class="item item-input" name="inspiration">
-                    <span class="input-label"></span><textarea placeholder="" ng-model="homeCtrl.inspiration"> </textarea>
-                </label>
-              </div>
-            </div>
-
-            <div ng-show="homeCtrl.problemIsSet == false && homeCtrl.problemIsVisible == true">
-              <h4>What problem are you solving?</h4>
-              <p>What's wrong? Probably something. What is it?</p>
-              <a ng-show="homeCtrl.problem != ''" ng-click="homeCtrl.problemIsSet = true" class="button button-small button-royal">Add Problem</a>
-
-              <div ng-show="homeCtrl.problemIsSet == false">
-                <label class="item item-input" name="problem">
-                    <span class="input-label"></span><textarea placeholder=""  ng-model="homeCtrl.problem"> </textarea>
-                </label>
-             </div>
-           </div>
-
-           <div  ng-show="homeCtrl.solutionIsSet == false && homeCtrl.solutionIsVisible == true">
-              <h4>What is the solution?</h4>
-              <p>Share your awesome idea. Or if you're just submitting a problem, just put whatever you want here. Jokes, casual life observations, etc.</p>
-              <a ng-show="homeCtrl.solution != ''" ng-click="homeCtrl.solutionIsSet = true" class="button button-small button-royal">Add Solution </a>
-
-              <div ng-show="homeCtrl.solutionIsSet == false">
-                <label class="item item-input" name="solution">
-                    <span class="input-label"></span><textarea placeholder=""  ng-model="homeCtrl.solution"> </textarea>
-                </label>
-             </div>
-           </div>
-
-
-
-           <div  ng-show="homeCtrl.contactIsSet == false && homeCtrl.contactIsVisible == true" >
-              <h4>If you want to—Provide your name and contact information.</h4>
-              <P>Do you want us to talk to you about this? Give us your digits, email, etc. <strong>Wish to remain anonymous?</strong> Good news, this thing submits all suggestions anonymously by default.</p>
-              <a ng-show="homeCtrl.contact != ''" ng-click="homeCtrl.contactIsSet = true" class="button button-small button-royal">Add Contact </a>
-
-              <div ng-show="homeCtrl.contactIsSet == false">
-
-                  <label class="item item-input" name="contact">
-                      <span class="input-label"></span><textarea placeholder="" ng-model="homeCtrl.contact"> </textarea>
+                <label class="item item-input" name="contact">
+                      <textarea placeholder="" ng-model="homeCtrl.contact"> </textarea>
                   </label>
             </div>
         </div>
 
-        <div ng-show="homeCtrl.submitIsReady()" >
-          <h4>We're ready to submit.</h4>
-          <p></p>
-          <a ng-click="homeCtrl.logResponse()" ui-sref="thanks" class="button button-full button-royal">Submit Idea</a>
+        <div ng-show="homeCtrl.titleIsSet == false && homeCtrl.titleIsVisible == true">
+            <h4>Give it a name.</h4>
+            <p><strong>Tip:</strong> Think about it for about...4 seconds. If it needs a great name, some writers will figure that out later.</p>
+            <a ng-show="homeCtrl.title != ''" ng-click="homeCtrl.titleIsSet = true" class="button button-small button-royal">Add Idea Name</a>
+            <div ng-show="homeCtrl.titleIsSet == false">
+                <label class="item item-input" name="title">
+                  <input type="text" placeholder="" ng-model="homeCtrl.title">
+              </label>
+
+            </div>
+        </div>
+
+        <div ng-show="homeCtrl.categoryIsSet == false && homeCtrl.categoryIsVisible == true" class="list">
+
+            <h4>Does it fit in one of these categories?</h4>
+            <a ng-show="homeCtrl.category != ''" ng-click="homeCtrl.categoryIsSet = true" class="button button-small button-royal">Add Category</a>
+            <div ng-show="homeCtrl.categoryIsSet == false">
+                <form name="radioForm">
+                    <ion-radio value="content" ng-model="homeCtrl.category">
+                        delivering content to students
+                    </ion-radio>
+                    <ion-radio value="production-process" ng-model="homeCtrl.category">
+                        improving curriculum process
+                    </ion-radio>
+                    <ion-radio value="FLVS-process" ng-model="homeCtrl.category">
+                        improving FLVS processes
+                    </ion-radio>
+                    <ion-radio value="big-ideas" ng-model="homeCtrl.category">
+                        this idea is TOO BIG to fit into one box
+                    </ion-radio>
+                    <ion-radio value="nope" ng-model="homeCtrl.category">
+                        it doesn't really fit any of these
+                    </ion-radio>
+                </form>
+
+            </div>
+        </div>
+
+
+        <div ng-show="homeCtrl.inspirationIsSet == false && homeCtrl.inspirationIsVisible == true">
+            <h4>What inspired this idea?</h4>
+            <p>Were you frustrated? See something interesting on Twitter? Remember that great idea you had 17 years ago?</p>
+            <a ng-show="homeCtrl.inspiration != ''" ng-click="homeCtrl.inspirationIsSet = true" class="button button-small button-royal">Add Inspiration</a>
+
+            <div ng-show="homeCtrl.inspirationIsSet == false">
+                <label class="item item-input" name="inspiration">
+                    <textarea placeholder="" ng-model="homeCtrl.inspiration"> </textarea>
+                </label>
+            </div>
+        </div>
+
+        <div ng-show="homeCtrl.problemIsSet == false && homeCtrl.problemIsVisible == true">
+            <h4>What problem are you solving?</h4>
+            <p>What's wrong? Probably something. What is it?</p>
+            <a ng-show="homeCtrl.problem != ''" ng-click="homeCtrl.problemIsSet = true" class="button button-small button-royal">Add Problem</a>
+
+            <div ng-show="homeCtrl.problemIsSet == false">
+                <label class="item item-input" name="problem">
+                    <textarea placeholder=""  ng-model="homeCtrl.problem"> </textarea>
+                </label>
+            </div>
+        </div>
+
+        <div ng-show="homeCtrl.solutionIsSet == false && homeCtrl.solutionIsVisible == true">
+            <h4>What is the solution?</h4>
+            <p>Share your awesome idea. Or if you're just submitting a problem, just put whatever you want here. Jokes, casual life observations, etc.</p>
+            <a ng-show="homeCtrl.solution != ''" ng-click="homeCtrl.solutionIsSet = true" class="button button-small button-royal">Add Solution </a>
+
+            <div ng-show="homeCtrl.solutionIsSet == false">
+                <label class="item item-input" name="solution">
+                    <textarea placeholder=""  ng-model="homeCtrl.solution"> </textarea>
+                </label>
+            </div>
+        </div>
+
+
+
+       
+
+        </div>
+
+
+        <div class="instructions" ng-show="homeCtrl.isNotStarted() == true">
+
+            <h4>This is what's gonna happen.</h4>
+            <ul>
+                <li>This</li>
+                <li>Then That</li>
+                <li>And the other</li>
+            </ul>
+            <a ng-click="homeCtrl.getStarted()" class="button button-full button-royal">Get Started</a>
+        </div>
+        <div ng-show="homeCtrl.submitIsReady()">
+            <h4>We're ready to submit.</h4>
+            <p></p>
+            <a ng-click="homeCtrl.submitIdea()" class="button button-full button-royal">Submit Idea</a>
+        </div>
+        <div ng-show="homeCtrl.submittedIsTrue()">
+            <h4>Thanks!</h4>
+            <p>Your idea was submitted.</p>
+            <a ng-click="homeCtrl.startOver()" class="button button-full button-energized">Submit A New Problem/Idea</a>
         </div>
     </ion-content>
 </ion-view>
