@@ -49,6 +49,11 @@ position:fixed !important;
 				margin-left: auto;
 				margin-right; auto;
 }
+.item-content { font-size: smaller;
+				color: #1f1f1f !important;
+				background-color: #E3F6FC ;}
+
+
 .button-light {background-color: #fb9621 !important;
 				border-color: #fb9621 !important;}
 
